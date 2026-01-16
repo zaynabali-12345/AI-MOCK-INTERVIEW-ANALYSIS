@@ -1,0 +1,622 @@
+/* --- Main Container --- */
+.ca-container {
+    min-height: 100vh;
+    background-color: transparent; /* Use global background */
+    padding: 3rem 2rem;
+    font-family: 'Inter', sans-serif; /* Consistent font */
+}
+
+.ca-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- Header Section --- */
+.ca-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.ca-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #DA70D6; /* Themed accent */
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.ca-main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 0%, #DA70D6 100%); /* Themed gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.2;
+}
+
+.ca-header-description {
+    font-size: 1.125rem;
+    color: rgba(220, 200, 230, 0.8); /* Themed text */
+    max-width: 700px;
+    margin: 0 auto 0.75rem auto;
+    line-height: 1.7;
+}
+
+.ca-header-subtitle {
+    font-size: 1rem;
+    color: #DA70D6; /* Themed accent */
+    font-weight: 500;
+}
+
+/* --- Form Card --- */
+.ca-form-card {
+    background: rgba(20, 10, 30, 0.5); /* Glassmorphic background */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px; /* Consistent border-radius */
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+.ca-form-intro {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* --- Form Elements --- */
+.ca-form-group {
+    margin-bottom: 2rem;
+}
+
+.ca-label {
+    display: block;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.ca-required {
+    color: #DA70D6; /* Themed accent */
+}
+
+.ca-input-group {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.ca-input, .ca-select {
+    flex: 1;
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.ca-input:focus, .ca-select:focus {
+    border-color: #DA70D6;
+    box-shadow: 0 0 0 2px rgba(218, 112, 214, 0.2);
+}
+
+.ca-input-hint {
+    font-size: 0.875rem;
+    color: rgba(220, 200, 230, 0.6);
+    margin-bottom: 0.75rem;
+}
+
+/* --- Add Buttons --- */
+.ca-add-btn {
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.ca-add-btn span {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.ca-add-btn {
+    background: linear-gradient(135deg, #DA70D6, #8A2BE2);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+}
+
+.ca-add-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(218, 112, 214, 0.5);
+}
+
+/* --- Tags --- */
+.ca-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.ca-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.ca-tag.skill-tag {
+    background-color: rgba(218, 112, 214, 0.15);
+    border: 1px solid rgba(218, 112, 214, 0.4);
+    color: #DA70D6;
+}
+
+.ca-tag.interest-tag {
+    background-color: rgba(138, 43, 226, 0.15);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    color: #8A2BE2;
+}
+
+.ca-tag-remove-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.125rem;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.ca-tag-remove-btn:hover {
+    opacity: 1;
+}
+
+/* --- Grid Layout for Inputs --- */
+.ca-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* --- Submit Button --- */
+.ca-submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #DA70D6, #8A2BE2);
+    border: none;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(138, 43, 226, 0.4);
+    transition: all 0.3s ease;
+}
+
+.ca-submit-btn:hover:not(:disabled) {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(218, 112, 214, 0.6);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .ca-grid {
+        grid-template-columns: 1fr;
+    }
+    .ca-main-title {
+        font-size: 2.5rem;
+    }
+    .ca-form-card {
+        padding: 2rem;
+    }
+}
+
+/* --- Loading and Error States --- */
+.ca-loading-spinner-container,
+.ca-error-display {
+    text-align: center;
+    padding: 6rem 1rem;
+    color: rgba(220, 200, 230, 0.7);
+    background: rgba(20, 10, 30, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+}
+
+.ca-loading-spinner {
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid #DA70D6;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.ca-error-display h2 {
+    color: #ef4444;
+    margin-bottom: 0.5rem;
+}
+
+.ca-reset-btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #DA70D6, #8A2BE2);
+    border: none;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1.5rem;
+}
+
+.ca-reset-btn:hover {
+    filter: brightness(1.2);
+}
+
+/* --- Results Display --- */
+.ca-results-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ca-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.ca-results-header h2 {
+    color: #ffffff;
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.ca-results-header .ca-reset-btn {
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.ca-results-header .ca-reset-btn:hover {
+    background-color: rgba(218, 112, 214, 0.1);
+    border-color: #DA70D6;
+    color: #DA70D6;
+}
+
+/* Career Path Card */
+.cp-card {
+    background: rgba(20, 10, 30, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.cp-card:hover {
+    border-color: rgba(218, 112, 214, 0.4);
+    box-shadow: 0 8px 30px rgba(218, 112, 214, 0.15);
+}
+
+.cp-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cp-card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.cp-match-score {
+    text-align: center;
+}
+
+.cp-match-score span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #DA70D6;
+}
+
+.cp-match-score p {
+    font-size: 0.8rem;
+    color: rgba(220, 200, 230, 0.6);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Roadmap */
+.cp-roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cp-roadmap-step {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.cp-step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(138, 43, 226, 0.15);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    color: #8A2BE2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.cp-step-content {
+    flex: 1;
+}
+
+.cp-step-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+}
+
+.cp-step-description {
+    font-size: 0.95rem;
+    color: rgba(220, 200, 230, 0.8);
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+.cp-step-details {
+    font-size: 0.9rem;
+    color: rgba(220, 200, 230, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cp-step-details strong {
+    color: #cccccc;
+    margin-right: 0.5rem;
+}
+
+.ca-submit-btn:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.4);
+    box-shadow: none;
+    transform: none;
+}
+
+/* --- Loading and Error States --- */
+.ca-loading-spinner-container,
+.ca-error-display {
+    text-align: center;
+    padding: 6rem 1rem;
+    color: rgba(220, 200, 230, 0.7);
+    background: rgba(20, 10, 30, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+}
+
+.ca-loading-spinner {
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid #DA70D6;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.ca-error-display h2 {
+    color: #ef4444;
+    margin-bottom: 0.5rem;
+}
+
+.ca-reset-btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #DA70D6, #8A2BE2);
+    border: none;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1.5rem;
+}
+
+.ca-reset-btn:hover {
+    filter: brightness(1.2);
+}
+
+/* --- Results Display --- */
+.ca-results-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ca-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.ca-results-header h2 {
+    color: #ffffff;
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.ca-results-header .ca-reset-btn {
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.ca-results-header .ca-reset-btn:hover {
+    background-color: rgba(218, 112, 214, 0.1);
+    border-color: #DA70D6;
+    color: #DA70D6;
+}
+
+/* Career Path Card */
+.cp-card {
+    background: rgba(20, 10, 30, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.cp-card:hover {
+    border-color: rgba(218, 112, 214, 0.4);
+    box-shadow: 0 8px 30px rgba(218, 112, 214, 0.15);
+}
+
+.cp-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cp-card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.cp-match-score {
+    text-align: center;
+}
+
+.cp-match-score span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #DA70D6;
+}
+
+.cp-match-score p {
+    font-size: 0.8rem;
+    color: rgba(220, 200, 230, 0.6);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Roadmap */
+.cp-roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cp-roadmap-step {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.cp-step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(138, 43, 226, 0.15);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    color: #8A2BE2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.cp-step-content {
+    flex: 1;
+}
+
+.cp-step-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+}
+
+.cp-step-description {
+    font-size: 0.95rem;
+    color: rgba(220, 200, 230, 0.8);
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+.cp-step-details {
+    font-size: 0.9rem;
+    color: rgba(220, 200, 230, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cp-step-details strong {
+    color: #cccccc;
+    margin-right: 0.5rem;
+}

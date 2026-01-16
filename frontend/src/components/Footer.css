@@ -1,0 +1,128 @@
+.footer-container {
+    position: relative;
+    padding: 100px 2rem 2rem 2rem; /* Add horizontal padding */
+    background: transparent; /* Make container transparent to see global background */
+}
+
+
+.footer-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Adjust height for a smoother fade */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); /* Fade to a slightly transparent black */
+    z-index: 1;
+}
+
+.footer {
+    background-color: rgba(12, 5, 22, 0.5); /* Dark purple, semi-transparent */
+    backdrop-filter: blur(10px); /* Glassmorphic blur */
+    color: #CFCFCF;
+    padding: 60px 5% 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-about {
+    max-width: 300px;
+}
+
+.footer-about .navbar-logo-container {
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #a0b3d1;
+}
+
+.footer-links-wrapper {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-links-column h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-links-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-column a {
+    color: #a0b3d1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links-column a:hover {
+    color: #007BFF;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #888;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+    }
+    .footer-links-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-bottom {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+}

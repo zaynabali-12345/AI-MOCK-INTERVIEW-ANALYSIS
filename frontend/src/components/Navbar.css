@@ -1,0 +1,90 @@
+.hero-navbar-glass {
+    position: fixed;
+    top: 20px; /* Add some space from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%; /* Constrain the width */
+    max-width: 1400px; /* Set a max-width for very large screens */
+    z-index: 1000;
+    padding: 15px 2%; /* Vertical and horizontal padding */
+    background: rgba(20, 10, 30, 0.5); /* Subtle purple tint */
+    backdrop-filter: blur(15px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Softer border */
+    border-radius: 20px; /* More rounded corners for glassmorphism */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Deeper shadow for floating effect */
+    transition: all 0.3s ease;
+}
+
+.hero-navbar-glass .navbar-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Glassmorphic Logo */
+.navbar-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.navbar-logo-container span {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Brighter luminous text */
+    letter-spacing: -0.5px;
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-grow: 1; /* Allow this container to grow */
+    justify-content: center; /* Center the links within this container */
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.65); /* Slightly dimmer for contrast */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(218, 112, 214, 0.8); /* Consistent Orchid glow */
+}
+
+/* Remove default browser outline on focus and apply a subtle theme-colored shadow */
+.nav-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.4); /* Blue-Violet focus ring */
+    border-radius: 4px;
+}
+
+.nav-cta-button-gradient {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #DA70D6, #8A2BE2); /* Orchid to Blue-Violet Gradient */
+    border: 1px solid rgba(218, 112, 214, 0.5);
+    border-radius: 15px; /* More rounded for glassmorphism */
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.95rem;
+    box-shadow: 0 5px 20px rgba(138, 43, 226, 0.4); /* Purple glow shadow */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-cta-button-gradient:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(218, 112, 214, 0.6); /* Brighter Orchid glow */
+}

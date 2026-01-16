@@ -1,0 +1,385 @@
+:root {
+    --primary-theme: #DA70D6; /* Orchid */
+    --secondary-theme: #8A2BE2; /* Blue-Violet */
+    --light-theme: #E6A4F5;
+    --accent-theme: #C875C4;
+    --bg-base: #000000;
+    --bg-glass-deep: rgba(12, 5, 22, 0.7);
+    --bg-glass-medium: rgba(20, 10, 30, 0.5);
+    --bg-glass-light: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(218, 112, 214, 0.3);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(220, 200, 230, 0.8);
+    --text-muted: #757575;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Lobby Container */
+.lobby-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: transparent; /* Use global background */
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated Background Effect */
+.lobby-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(218, 112, 214, 0.1) 0%, transparent 70%);
+    animation: rotate-gradient 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate-gradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Lobby Card */
+.lobby-card {
+    background: var(--bg-glass-medium);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    padding: 50px;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+    animation: fade-in-up 0.6s ease-out;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Lobby Section */
+.lobby-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    animation: fade-in 0.8s ease-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lobby-section h2 {
+    margin-top: 0;
+    background: linear-gradient(135deg, var(--primary-theme) 0%, var(--light-theme) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.lobby-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-theme), transparent);
+    border-radius: 2px;
+}
+
+/* Lobby Separator */
+.lobby-separator {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--border-color);
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.lobby-separator::before,
+.lobby-separator::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, var(--primary-theme), transparent);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lobby-separator::before {
+    top: -120px;
+}
+
+.lobby-separator::after {
+    bottom: -120px;
+}
+
+/* Forms */
+.create-form, .join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.create-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.create-form label span {
+    color: var(--primary-theme);
+    font-weight: 600;
+}
+
+/* Input Fields */
+.create-form input,
+.create-form select,
+.join-form input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+}
+
+.create-form input::placeholder,
+.join-form input::placeholder {
+    color: var(--text-muted);
+}
+
+.create-form input:focus,
+.create-form select:focus,
+.join-form input:focus {
+    outline: none;
+    border-color: var(--primary-theme);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 2px rgba(218, 112, 214, 0.2);
+    transform: translateY(-2px);
+}
+
+.create-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23DA70D6' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+.create-form select option {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    padding: 10px;
+}
+
+.create-form input[type="number"] {
+    width: 100px;
+}
+
+/* Buttons */
+.btn-create,
+.join-form button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary-theme), var(--secondary-theme));
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.btn-create::before,
+.join-form button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-create:hover::before,
+.join-form button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-create:hover,
+.join-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(218, 112, 214, 0.6);
+    background: linear-gradient(135deg, var(--light-theme), var(--primary-theme));
+}
+
+.btn-create:active,
+.join-form button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+/* Input Group for Number and Label */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.input-group label {
+    margin: 0;
+}
+
+.input-group input[type="number"] {
+    flex: 0 0 100px;
+}
+
+/* Hover Effects on Sections */
+.lobby-section {
+    transition: transform 0.3s ease;
+}
+
+.lobby-section:hover {
+    transform: scale(1.02);
+}
+
+/* Focus Visible for Accessibility */
+.btn-create:focus-visible,
+.join-form button:focus-visible,
+.create-form input:focus-visible,
+.create-form select:focus-visible,
+.join-form input:focus-visible {
+    outline: 2px solid var(--primary-theme);
+    outline-offset: 2px;
+}
+
+/* Loading State (optional enhancement) */
+.btn-create.loading,
+.join-form button.loading {
+    pointer-events: none;
+    opacity: 0.7;
+    position: relative;
+}
+
+.btn-create.loading::after,
+.join-form button.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid white;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lobby-card {
+        flex-direction: column;
+        padding: 30px 20px;
+        max-width: 500px; /* Constrain width on smaller tablets */
+        gap: 30px;
+    }
+
+    .lobby-separator {
+        margin: 20px 0;
+        transform: rotate(90deg);
+    }
+
+    .lobby-separator::before,
+    .lobby-separator::after {
+        display: none;
+    }
+
+    .lobby-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .btn-create,
+    .join-form button {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lobby-container {
+        padding: 20px 10px;
+    }
+
+    .lobby-card {
+        padding: 25px 15px;
+    }
+
+    .lobby-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .create-form input,
+    .create-form select,
+    .join-form input {
+        /* Use a slightly larger font on mobile for better readability */
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+}

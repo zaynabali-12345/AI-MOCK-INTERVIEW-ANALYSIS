@@ -1,0 +1,308 @@
+/* --- Global Theme Variables --- */
+:root {
+  --primary-theme: #DA70D6; /* Orchid */
+  --secondary-theme: #8A2BE2; /* Blue-Violet */
+  --light-theme: #E6A4F5;
+  --bg-base: #000000;
+  --bg-glass-deep: rgba(12, 5, 22, 0.7);
+  --bg-glass-medium: rgba(20, 10, 30, 0.5);
+  --bg-glass-light: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(218, 112, 214, 0.3);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(220, 200, 230, 0.8);
+  --text-muted: #757575;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* --- Keyframes --- */
+@keyframes progress-bar-stripes {
+  from { background-position: 40px 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes rotate-gradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- Main Container Background --- */
+.gradient-bg-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  background: transparent; /* Use global background */
+  overflow: hidden;
+  padding: 3rem 2rem;
+}
+
+/* Animated Background Glow */
+.gradient-bg-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(218, 112, 214, 0.1) 0%, transparent 70%);
+  animation: rotate-gradient 20s linear infinite;
+  z-index: 0;
+}
+
+/* --- Header Section --- */
+.header-section {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary-theme) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+
+.header-section p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Form Container --- */
+.form-container-gradient {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  padding: 3rem;
+  background: var(--bg-glass-medium);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  z-index: 1;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Change to a single column layout */
+  gap: 2rem;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.icon {
+  color: var(--primary-theme);
+  font-size: 1.2rem;
+}
+
+/* --- Custom File Input --- */
+.file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 180px; /* Match textarea height */
+}
+
+.file-input-label:hover {
+  border-color: var(--primary-theme);
+  color: var(--light-theme);
+  background: rgba(218, 112, 214, 0.05);
+}
+
+.file-icon {
+  font-size: 2.5rem;
+}
+
+.file-input-text {
+  font-size: 0.95rem;
+}
+
+.file-input-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --- Form Input Fields --- */
+.gradient-form-textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 1rem 1.25rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  resize: vertical;
+  transition: all 0.3s ease;
+  line-height: 1.6;
+}
+
+.gradient-form-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.gradient-form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-theme);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px rgba(218, 112, 214, 0.2);
+}
+
+/* --- Button Container --- */
+.button-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* --- Animated Gradient Border Button --- */
+.gradient-border-btn {
+  position: relative;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--primary-theme), var(--secondary-theme));
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+.gradient-border-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(218, 112, 214, 0.6);
+  background: linear-gradient(135deg, var(--light-theme), var(--primary-theme));
+}
+
+.gradient-border-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+.gradient-border-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+  background: var(--bg-light);
+}
+
+/* --- Other Styles --- */
+.error-message {
+  color: #ff8a80;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 1.5rem;
+  height: 12px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--secondary-theme), var(--primary-theme));
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+  animation: progress-bar-stripes 2s linear infinite;
+  border-radius: 6px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .header-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .header-section p {
+    font-size: 1rem;
+  }
+
+  .form-container-gradient {
+    padding: 2rem 1.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+  }
+
+  .gradient-border-btn {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gradient-bg-container {
+    padding: 2rem 1rem;
+  }
+
+  .header-section h1 {
+    font-size: 2rem;
+  }
+}

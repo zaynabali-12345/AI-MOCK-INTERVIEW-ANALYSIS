@@ -1,0 +1,72 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: transparent; /* Make this transparent */
+  position: relative; /* Ensure it sits correctly in the stacking context */
+  z-index: 1;
+}
+
+.main-content {
+  flex: 1;
+  /* Add padding to push content below the fixed navbar */
+  padding-top: 80px; /* Globally offset content for the fixed navbar */
+}
+
+/* This rule hides the navbar when the interview page is active */
+body.interview-active .hero-navbar-glass {
+    display: none;
+}
+
+/* --- Global Animated Background --- */
+.page-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Sits behind all content */
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.page-background::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(218, 112, 214, 0.2) 0%, rgba(53, 1, 54, 0.1) 40%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 25s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+.page-background::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -30%;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, rgba(53, 1, 54, 0.1) 40%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: float 35s ease-in-out infinite alternate-reverse;
+    z-index: -1;
+}
+
+.page-background-orb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;    
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, rgba(53, 1, 54, 0.05) 50%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.5;
+}

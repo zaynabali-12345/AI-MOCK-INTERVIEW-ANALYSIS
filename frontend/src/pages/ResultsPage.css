@@ -1,0 +1,177 @@
+.results-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: transparent; /* Changed to transparent for global background */
+    padding: 4rem 2rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.results-container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    animation: fade-in-up 0.6s ease-out;
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.results-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #ffffff 0%, #DA70D6 100%); /* White to Orchid gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.result-card {
+    background: rgba(20, 10, 30, 0.5); /* Subtle purple tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Softer border */
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(218, 112, 214, 0.5); /* Orchid glow on hover */
+}
+
+.result-card h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #DA70D6; /* Orchid accent color */
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 0.75rem;
+}
+
+.result-card p {
+    color: #b0b0b0;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.score-card {
+    text-align: center;
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.score-circle::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    padding: 5px;
+    background: conic-gradient(var(--score-color, #DA70D6) var(--score-percent, 0%), #2a2a2a 0); /* Default to Orchid */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: fill-score 1.5s ease-out forwards;
+}
+
+@keyframes fill-score {
+    from { --score-percent: 0%; }
+    to { /* The percentage is set via inline style */ }
+}
+
+.score-circle.high { --score-color: #50c878; }
+.score-circle.medium { --score-color: #f59e0b; }
+.score-circle.low { --score-color: #ff6b6b; }
+
+.suggestions-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.suggestions-card li {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #DA70D6; /* Orchid accent border */
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.suggestions-card li::before {
+    /* Removed the arrow to use the border-left as the indicator */
+    content: '';
+    padding-left: 0;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background-color: rgba(218, 112, 214, 0.15); /* Orchid background */
+    border: 1px solid rgba(218, 112, 214, 0.5); /* Orchid border */
+    color: #ffffff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: #DA70D6; /* Orchid background on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(218, 112, 214, 0.3);
+}
+
+.error-container {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(220, 53, 69, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.error-container h2 {
+    color: #dc3545;
+}
+
+.error-container p {
+    color: #b0b0b0;
+}

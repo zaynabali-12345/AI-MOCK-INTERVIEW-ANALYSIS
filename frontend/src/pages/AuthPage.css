@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* --- Base Container --- */
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  background: transparent;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+}
+
+/* --- Left Side (Welcome Section) --- */
+.welcome-section {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 3rem;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Large Circular Gradient Shape - Top-Right of Welcome Section */
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -40%;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(53, 1, 54, 0.3) 0%, rgba(138, 43, 226, 0.2) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.9;
+}
+
+/* Small Circular Gradient Shape - Bottom-Left */
+.welcome-section::after {
+  content: '';
+  position: absolute;
+  bottom: -25%;
+  left: -30%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(218, 112, 214, 0.2) 0%, rgba(53, 1, 54, 0.1) 60%, transparent 80%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.welcome-content h1 {
+  font-size: 5.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  line-height: 0.9;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-content h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-content p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Medium Circular Shape - Center Overlap */
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;    
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.2) 0%, rgba(53, 1, 54, 0.1) 40%, transparent 70%); /* Subtle purple center glow */
+  border-radius: 50%;
+  filter: blur(70px);
+  z-index: 1;
+  opacity: 0.6;
+}
+
+/* --- Right Side (Form Section) --- */
+.form-section {
+  position: relative;
+  width: 50%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 5rem 3rem 3rem;
+  z-index: 3;
+}
+
+/* Small Accent Circle - Top-Right */
+.form-section::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(218, 112, 214, 0.1) 0%, rgba(138, 43, 226, 0.05) 50%, transparent 70%); /* Orchid accent glow */
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* Bottom-Right Glow */
+.form-section::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  right: -15%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(53, 1, 54, 0.1) 0%, rgba(138, 43, 226, 0.05) 50%, transparent 70%); /* Deep purple accent glow */
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.form-section h1 {
+  color: #DA70D6; /* Orchid color for heading */
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 20px rgba(218, 112, 214, 0.5); /* Orchid glow */
+}
+
+.form-section > p {
+  color: rgba(220, 200, 230, 0.7); /* Orchid tint for subheading */
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 2;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  color: #E0E0E0;
+  font-size: 0.95rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background-color: rgba(20, 10, 30, 0.7); /* Subtle purple tint */
+  color: #FFFFFF;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  backdrop-filter: blur(5px);
+}
+
+.form-control:focus {
+  outline: none;
+  border: 1px solid rgba(218, 112, 214, 0.7);
+  box-shadow: 0 0 15px rgba(218, 112, 214, 0.3);
+}
+
+.form-control::placeholder {
+  color: #666;
+}
+
+.error-message {
+  color: #FF6B6B;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* --- Buttons --- */
+.btn-auth {
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary-auth {
+  background: linear-gradient(135deg, #DA70D6, #8A2BE2); /* Orchid to Blue-Violet Gradient */
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(218, 112, 214, 0.4); /* Orchid glow */
+}
+
+.btn-primary-auth:hover:not(:disabled) {
+  box-shadow: 0 6px 30px rgba(218, 112, 214, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-secondary-auth {
+  background: transparent;
+  border: 2px solid #DA70D6;
+  color: #DA70D6;
+  margin-top: 1rem;
+}
+
+.btn-secondary-auth:hover:not(:disabled) {
+  background: rgba(218, 112, 214, 0.15);
+  box-shadow: 0 0 20px rgba(218, 112, 214, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-auth:disabled {
+  background: #2a2a2a;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+  border-color: #333;
+}
+
+.btn-auth:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* --- Divider --- */
+.divider {
+  width: 100%;
+  text-align: center;
+  margin: 1.8rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.divider span {
+  color: #888;
+  background-color: #000000; /* Match new base background */
+  padding: 0 15px;
+  font-size: 0.9rem;
+  text-transform: lowercase;
+}
+
+/* --- Footer Text --- */
+.auth-footer-text {
+  margin-top: 1.8rem;
+  color: #999;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.auth-footer-text a {
+  color: #DA70D6; /* Orchid link color */
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.auth-footer-text a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(218, 112, 214, 0.7);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 968px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .welcome-section {
+    width: 100%;
+    padding: 3rem 2rem;
+    min-height: 45vh;
+  }
+
+  .welcome-section::before {
+    width: 700px;
+    height: 700px;
+    top: -20%;
+    right: -30%;
+  }
+
+  .welcome-section::after {
+    width: 450px;
+    height: 450px;
+    bottom: -15%;
+    left: -20%;
+  }
+
+  .auth-container::before {
+    width: 500px;
+    height: 500px;
+    top: 35%;
+    left: 50%;
+  }
+
+  .welcome-content {
+    max-width: 100%;
+  }
+
+  .welcome-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .welcome-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .welcome-content p {
+    font-size: 1.05rem;
+  }
+
+  .form-section {
+    width: 100%;
+    padding: 2.5rem 1.5rem;
+    min-height: 55vh;
+  }
+
+  .form-section::before {
+    width: 400px;
+    height: 400px;
+    top: -10%;
+    right: -15%;
+  }
+
+  .form-section::after {
+    width: 350px;
+    height: 350px;
+    bottom: -15%;
+    right: -10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-section {
+    padding: 2.5rem 1.5rem;    
+    min-height: 40vh;
+  }
+
+  .welcome-section::before {
+    width: 500px;
+    height: 500px;
+  }
+
+  .welcome-section::after {
+    width: 350px;
+    height: 350px;
+  }
+
+  .welcome-content h1 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+
+  .welcome-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-content p {
+    font-size: 1rem;
+  }
+
+  .form-section {
+    padding: 2rem 1.2rem;
+  }
+
+  .form-section h1 {
+    font-size: 2.3rem;
+  }
+
+  .auth-form {
+    max-width: 100%;
+  }
+
+  .btn-auth {
+    padding: 13px 20px;
+    font-size: 1rem;    
+  }
+}
