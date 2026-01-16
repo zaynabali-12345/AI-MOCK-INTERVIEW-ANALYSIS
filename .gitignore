@@ -1,0 +1,32 @@
+# ===== ENV FILES =====
+.env
+.env.local
+.env.development
+.env.production
+
+# ===== PYTHON =====
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# ===== FASTAPI / UVICORN =====
+*.log
+
+# ===== NODE / REACT =====
+node_modules/
+build/
+dist/
+
+# ===== REACT ENV =====
+frontend/.env
+frontend/.env.local
+
+# ===== BACKEND ENV =====
+backend/.env
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
